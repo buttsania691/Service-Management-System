@@ -1,0 +1,274 @@
+/* ========== CONTAINER & CARD ========== */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f7fb;
+  padding: 20px;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(17, 75, 95, 0.06);
+  padding: 35px 30px;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+/* ========== TITLE ========== */
+.title {
+  text-align: center;
+  color: #114B5F;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+/* ========== PROFILE IMAGE ========== */
+.imageWrapper {
+  position: relative;
+  text-align: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+}
+
+.profileImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #114B5F;
+  padding: 3px;
+  background-color: #fff;
+  transition: 0.2s ease;
+}
+
+.placeholderImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  margin: 0 auto;
+  border: 3px solid #114B5F;
+  color: #114B5F;
+}
+
+.editIcon {
+  position: absolute;
+  bottom: 10px;
+  right: calc(50% - 70px);
+  background-color: #F2BB05;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #114B5F;
+  font-size: 16px;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.uploadOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(11, 48, 61, 0.65);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  font-weight: 600;
+}
+
+.hiddenFileInput {
+  display: none;
+}
+
+.clickHint {
+  text-align: center;
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+/* ========== FORM FIELDS ========== */
+.field {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #114B5F;
+  font-size: 14px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 4px;
+  color: #334155;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  border-color: #114B5F;
+  box-shadow: 0 0 0 3px rgba(17, 75, 95, 0.12);
+}
+
+.note {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* ========== BUTTONS ========== */
+.button {
+  width: 100%;
+  padding: 14px;
+  background-color: #114B5F;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(17, 75, 95, 0.15);
+}
+
+.button:hover {
+  background-color: #0b303d;
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  background-color: #94a3b8;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* ========== PASSWORD SECTION ========== */
+.passwordSection {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.passwordTitle {
+  margin-bottom: 18px;
+  color: #114B5F;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.passwordButton {
+  width: 100%;
+  padding: 14px;
+  background-color: #F2BB05;
+  color: #114B5F;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(242, 187, 5, 0.2);
+}
+
+.passwordButton:hover {
+  background-color: #dba904;
+  transform: translateY(-1px);
+}
+
+.passwordButton:disabled {
+  background-color: #cbd5e1;
+  color: #94a3b8;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.passwordMessage {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #10b981;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ========== LOADING STATE ========== */
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 20px;
+  color: #114B5F;
+  font-weight: 600;
+}
+
+/* ========== MOBILE RESPONSIVE DESIGN ========== */
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+
+  .card {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .title {
+    font-size: 23px;
+    margin-bottom: 20px;
+  }
+
+  .profileImage, .placeholderImage {
+    width: 110px;
+    height: 110px;
+  }
+
+  .editIcon {
+    right: calc(50% - 62px);
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .input {
+    padding: 11px 14px;
+    font-size: 14px;
+  }
+
+  .button, .passwordButton {
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+}

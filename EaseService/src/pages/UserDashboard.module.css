@@ -1,0 +1,696 @@
+/* ========== GLOBAL ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f6f9;
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  line-height: 1.5;
+}
+/* UserDashboard.module.css mein add karein */
+
+.profileEditButtons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.saveProfileBtn {
+  padding: 10px 20px;
+  background-color: #0f3d3e; /* Aapki app ka dark teal color */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.saveProfileBtn:hover {
+  background-color: #1a5c5e; /* Hover par thora light teal */
+}
+
+.cancelEditBtn {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #4b5563; /* Dark gray text */
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cancelEditBtn:hover {
+  background-color: #f3f4f6; /* Hover par halka gray background */
+}
+/* ========== PAGE WRAPPER ========== */
+.pageWrapper {
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========== DASHBOARD CARD ========== */
+.dashboardCard {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Header */
+.dashboardHeader {
+  background: #114B5F; /* Updated: Premium Dark Teal */
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brandName {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
+.userName {
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(2px);
+}
+
+.menuToggleBtn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.menuToggleBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation Tabs */
+.dashboardNav {
+  padding: 0 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e9eef3;
+  display: flex;
+  gap: 1.75rem;
+}
+
+.navTab {
+  padding: 0.85rem 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #5b6e8c;
+  cursor: pointer;
+  border: none;
+  background: none;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.navTab:hover {
+  color: #114B5F; /* Updated */
+}
+
+.navTab.active {
+  color: #114B5F; /* Updated */
+  font-weight: 600;
+}
+
+.navTab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #114B5F; /* Updated */
+  border-radius: 2px;
+}
+
+/* Dashboard Body */
+.dashboardBody {
+  padding: 1.75rem 1.5rem 2rem;
+}
+
+.sectionLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #5b6e8c;
+  margin-bottom: 1rem;
+}
+
+/* Booking Cards */
+.cleaningCard {
+  background: #fefefe;
+  border: 1px solid #eef2f6;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.cleaningCard:hover {
+  border-color: #dce3ec;
+  box-shadow: 0 4px 12px rgba(17, 75, 95, 0.03);
+}
+
+.cleaningType {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #0f172a;
+  margin-bottom: 0.3rem;
+}
+
+.cleaningDescription {
+  font-size: 13px;
+  color: #555;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.cleaningDate,
+.cleaningTime {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 0.2rem;
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eff3f8;
+}
+
+.cancelWrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.rescheduleBtn,
+.cancelBtn {
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.2rem 0;
+  transition: all 0.15s;
+  font-family: 'Inter', sans-serif;
+}
+
+.rescheduleBtn {
+  color: #114B5F; /* Updated: Theme Dark Teal Link */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rescheduleBtn:hover {
+  color: #0d3947;
+}
+
+.cancelBtn {
+  color: #b91c1c;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cancelBtn:hover {
+  color: #991b1b;
+}
+
+.cancelTimer {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+}
+
+/* History List */
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.historyEmpty {
+  background: #f9fafb;
+  border: 1px dashed #cbd5e1;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Success Messages */
+.rescheduleSuccess {
+  background: rgba(17, 75, 95, 0.06); /* Soft Teal Tint */
+  border-left: 4px solid #114B5F; /* Updated */
+  border-radius: 0.75rem;
+  padding: 0.9rem 1.25rem;
+  font-size: 0.9rem;
+  color: #114B5F; /* Updated */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Profile Section */
+.profileSection {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  margin-top: 0.5rem;
+}
+
+.profileTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.25rem;
+  border-left: 4px solid #114B5F; /* Updated */
+  padding-left: 1rem;
+}
+
+.profileMessage {
+  background: rgba(17, 75, 95, 0.06);
+  color: #114B5F; /* Updated */
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profileDetails p {
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+  color: #334155;
+  border-bottom: 1px dashed #e9eef3;
+  padding-bottom: 0.5rem;
+}
+
+.profileDetails strong {
+  color: #0f172a;
+  min-width: 100px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.editProfileBtn {
+  background: #114B5F; /* Updated */
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: 0.2s;
+}
+
+.editProfileBtn:hover {
+  background: #0d3947;
+  transform: translateY(-1px);
+}
+
+/* Edit Profile Form */
+.profileEditForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profileEditForm label {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.85rem;
+  margin-bottom: -0.25rem;
+}
+
+.profileEditForm input,
+.profileEditForm textarea {
+  padding: 0.7rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  background: #fefefe;
+  transition: 0.15s;
+}
+
+.profileEditForm input:focus,
+.profileEditForm textarea:focus {
+  outline: none;
+  border-color: #114B5F; /* Updated */
+  box-shadow: 0 0 0 2px rgba(17, 75, 95, 0.2);
+}
+
+.profileEditForm textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.profileEditButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.saveProfileBtn {
+  background: #114B5F; /* Updated */
+  color: white;
+}
+
+.saveProfileBtn:hover {
+  background: #0d3947;
+}
+
+.cancelEditBtn {
+  background: #f1f5f9;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+}
+
+.cancelEditBtn:hover {
+  background: #e9eef3;
+}
+
+/* Password Change Section */
+.passwordChangeSection {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.passwordChangeSection h4 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.passwordInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.changePasswordBtn {
+  background-color: #F2BB05; /* Updated: Premium Mustard Gold highlight */
+  color: #114B5F; /* Readable dark contrast text */
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.changePasswordBtn:hover:not(:disabled) {
+  background-color: #dba904;
+}
+
+.changePasswordBtn:disabled {
+  background-color: #bdc3c7;
+  color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+.passwordMessage {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #27ae60;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalBox {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 1.8rem;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modalTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.modalLabel {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  color: #334155;
+}
+
+.modalInput {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  transition: 0.15s;
+}
+
+.modalInput:focus {
+  outline: none;
+  border-color: #114B5F; /* Updated */
+  box-shadow: 0 0 0 2px rgba(17, 75, 95, 0.2);
+}
+
+.modalActions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.modalConfirmBtn,
+.modalCancelBtn {
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: none;
+  transition: 0.15s;
+}
+
+.modalConfirmBtn {
+  background: #114B5F; /* Updated */
+  color: white;
+}
+
+.modalConfirmBtn:hover {
+  background: #0d3947;
+}
+
+.modalCancelBtn {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+
+.modalCancelBtn:hover {
+  background: #e9eef3;
+}
+
+/* Dropdown Overlay (mobile menu) */
+.dropdownOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 240px;
+  background: #114B5F; /* Updated */
+  border-radius: 1rem 0 0 1rem;
+  padding: 1rem 0;
+  z-index: 20;
+  height: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.dropdownOverlay::-webkit-scrollbar {
+  width: 5px;
+}
+.dropdownOverlay::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.dropdownOverlay::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+.dropdownClose {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.2rem 1rem 1rem;
+}
+
+.closeBtn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1.5rem;
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.dropdownItem:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dropdownIcon {
+  font-size: 1.1rem;
+  width: 1.5rem;
+}
+
+.bookServiceBtn {
+  margin: 1rem 1.5rem;
+  background: #ffffff;
+  color: #114B5F; /* Updated */
+  border: none;
+  border-radius: 2rem;
+  padding: 0.6rem 0;
+  width: calc(100% - 3rem);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: 'Inter', sans-serif;
+}
+
+.bookServiceBtn:hover {
+  background: #e9eef3;
+  transform: scale(0.98);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 640px) {
+  .pageWrapper {
+    padding: 1rem;
+  }
+  .dashboardBody {
+    padding: 1.25rem;
+  }
+  .dashboardNav {
+    gap: 1rem;
+  }
+  .cleaningCard {
+    padding: 1rem;
+  }
+  .actionButtons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .modalBox {
+    width: 92%;
+    padding: 1.5rem;
+  }
+  .userName {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
+  .profileSection {
+    padding: 1rem;
+  }
+  .profileDetails p {
+    font-size: 0.85rem;
+  }
+  .profileDetails strong {
+    min-width: 80px;
+  }
+  .profileEditButtons {
+    flex-direction: column;
+  }
+}

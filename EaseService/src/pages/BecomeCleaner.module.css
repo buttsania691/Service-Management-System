@@ -1,0 +1,230 @@
+/* BecomeCleaner.css */
+
+.become-cleaner-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 24px; /* Smooth corners matching dashboard */
+  box-shadow: 0 10px 30px rgba(17, 75, 95, 0.06); /* Teal shadow tint */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+/* ================= PASSWORD SHOW/HIDE ================= */
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper .become-cleaner-input {
+  width: 100%;
+  padding-right: 45px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+  color: #8a8a8a;
+
+  padding: 0;
+  margin: 0;
+
+  cursor: pointer;
+  z-index: 2;
+}
+
+.password-toggle:hover {
+  color: #114B5F;
+  background: transparent;
+}
+
+.password-toggle:focus {
+  outline: none;
+}
+
+.password-toggle svg {
+  width: 19px;
+  height: 19px;
+}
+.become-cleaner-title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #114B5F; /* Updated: Premium Dark Teal */
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.become-cleaner-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.become-cleaner-input {
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  background: #f8fafc;
+  color: #334155;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.become-cleaner-input:focus {
+  border-color: #114B5F; /* Updated: Premium Dark Teal */
+  box-shadow: 0 0 0 3px rgba(17, 75, 95, 0.12);
+  background: white;
+}
+
+.become-cleaner-label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #114B5F; /* Updated: Matching label colors */
+  font-size: 14px;
+}
+
+.become-cleaner-file {
+  padding: 8px 0;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #334155;
+}
+
+.become-cleaner-button {
+  background: #114B5F; /* Updated: Primary Dark Teal */
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 14px; /* Structured block matching setup buttons */
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(17, 75, 95, 0.15);
+}
+
+.become-cleaner-button:hover:not(:disabled) {
+  background: #0b303d;
+  transform: translateY(-1px);
+}
+
+.become-cleaner-button:disabled {
+  background: #94a3b8;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Form Container Responsive */
+@media (max-width: 640px) {
+  .become-cleaner-container {
+    margin: 20px;
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+  .become-cleaner-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .become-cleaner-input {
+    padding: 11px 14px;
+    font-size: 15px;
+  }
+}
+
+/* ========== NAVBAR ELEMENTS ========== */
+
+/* Become a Cleaner button inside navbar */
+.become-cleaner-btn {
+  background: transparent;
+  border: 1.5px solid #114B5F; /* Updated: Premium Dark Teal Outline */
+  color: #114B5F;
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 12px;
+  background-color: white;
+  white-space: nowrap;
+}
+
+.become-cleaner-btn:hover {
+  background: #114B5F;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(17, 75, 95, 0.15);
+}
+
+/* Adjust navbar layout to fit both buttons */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.navbar .login-btn,
+.navbar .become-cleaner-btn {
+  margin-left: 10px;
+}
+
+/* Navbar Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stacks brand name and nav menus neatly */
+    gap: 12px;
+    padding: 15px 20px;
+    text-align: center;
+  }
+  
+  .navbar nav {
+    width: 100%;
+    justify-content: center; /* Centers navigation links on mobile screen */
+    flex-wrap: wrap;       /* Prevents buttons wrapping layout breakages */
+    margin-top: 4px;
+    gap: 12px;
+  }
+  
+  .become-cleaner-btn {
+    margin-left: 0;
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+/* ================= VALIDATION ERROR ================= */
+
+.error-message {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: -8px;
+  margin-bottom: 4px;
+  display: block;
+  font-weight: 500;
+}

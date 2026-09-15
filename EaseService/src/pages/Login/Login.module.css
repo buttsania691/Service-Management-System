@@ -1,0 +1,141 @@
+/* Login.module.css */
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f8;
+  padding: 20px; /* Added padding to prevent card touching screen edges on mobile */
+}
+
+.formBox {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 14px;
+  width: 100%; /* Changed to fluid width */
+  max-width: 360px; /* Restricts maximum width on desktop */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.title {
+  color: #222;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.inputGroup {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.label {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  background: #fafafa;
+  font-size: 14px;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #114B5F; /* Premium Dark Teal */
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(17, 75, 95, 0.12);
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #114B5F; /* Theme Solid Dark Teal */
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.button:hover {
+  background: #0d3947; /* Deeper teal on hover */
+}
+
+.roleSelect {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  margin-bottom: 18px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.roleSelect:focus {
+  border-color: #114B5F;
+  box-shadow: 0 0 0 3px rgba(17, 75, 95, 0.12);
+}
+
+.footerText {
+  margin-top: 15px;
+  color: #666;
+  font-size: 13px;
+}
+
+.link {
+  color: #114B5F;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ===== ROBUST RESPONSIVE BREAKPOINTS ===== */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .formBox {
+    padding: 30px 20px; /* Reduced internal padding to save space on small devices */
+    border-radius: 12px;
+  }
+
+  .title {
+    font-size: 22px; /* Slightly scaled down text for mobile symmetry */
+    margin-bottom: 20px;
+  }
+
+  .input, 
+  .roleSelect, 
+  .button {
+    padding: 11px; /* Optimizing input click targets for smaller viewports */
+    font-size: 13.5px;
+  }
+}
+
+/* Landscape mode for mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .container {
+    height: auto;
+    padding: 40px 20px;
+  }
+}

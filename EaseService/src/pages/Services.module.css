@@ -1,0 +1,227 @@
+/* Services.module.css - Teal & Mustard Palette (No Navbar) */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1758272421701-569f31f05fd1?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 75px;
+}
+
+.heroOverlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 75, 95, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroContent {
+  text-align: center;
+  color: white;
+  max-width: 650px;
+  padding: 20px;
+}
+
+.heroContent h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.heroContent p {
+  font-size: 20px;
+  color: #e0e0e0;
+  margin-bottom: 25px;
+}
+
+.heroButtons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.heroButtons button {
+  padding: 14px 26px;
+  border: none;
+  background: #f2bb05;
+  color: #114b5f;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.heroButtons button:hover {
+  background: #d4a202;
+}
+
+.heroButtons .outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.heroButtons .outline:hover {
+  background: white;
+  color: #114b5f;
+}
+
+/* ===== SERVICES SECTION ===== */
+.servicesSection {
+  padding: 80px 60px;
+  background: #f5f7fa;
+}
+
+.servicesSection h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #114b5f;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border-radius: 16px;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(17, 75, 95, 0.12);
+}
+
+.cardIcon i {
+  font-size: 40px;
+  color: #114b5f;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #114b5f;
+}
+
+.card p {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.price span {
+  color: #f2bb05;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.card button {
+  margin-top: 12px;
+  padding: 12px;
+  width: 100%;
+  background: #114b5f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: #0d3947;
+}
+
+.description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 6px 0 10px;
+  text-align: left;
+  letter-spacing: 0.2px;
+}
+
+/* ===== LOADING & ERROR ===== */
+.loadingSpinner {
+  text-align: center;
+  padding: 40px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e0e0e0;
+  border-top-color: #114b5f;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorMessage {
+  text-align: center;
+  color: #e74c3c;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.noServices {
+  text-align: center;
+  color: #666;
+  padding: 40px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 34px;
+  }
+
+  .heroContent p {
+    font-size: 16px;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+  }
+
+  .heroButtons button {
+    width: 100%;
+  }
+
+  .servicesSection {
+    padding: 60px 20px;
+  }
+}

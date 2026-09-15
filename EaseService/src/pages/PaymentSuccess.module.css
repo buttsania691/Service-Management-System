@@ -1,0 +1,144 @@
+.overlay {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background-color: #f5f5f3;
+}
+
+.card {
+  background: #ffffff;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 440px;
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 2.5px solid #e8e8e6;
+  border-top-color: #1a1a1a;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.iconRingSuccess {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  background-color: #eaf3de;
+  color: #3b6d11;
+}
+
+.iconRingError {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  background-color: #fcebeb;
+  color: #a32d2d;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666662;
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #eaf3de;
+  color: #3b6d11;
+  border-radius: 8px;
+  padding: 5px 12px;
+  margin-bottom: 1.5rem;
+}
+
+.divider {
+  border: none;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  margin: 0 0 1.5rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btnPrimary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.btnPrimary:hover {
+  opacity: 0.85;
+}
+
+.btnSecondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: transparent;
+  color: #1a1a1a;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btnSecondary:hover {
+  background-color: #f5f5f3;
+}
+
+.countdown {
+  font-size: 12px;
+  color: #999996;
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+}
